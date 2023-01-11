@@ -1,0 +1,112 @@
+  <TouchableOpacity
+              style={{ marginLeft: 15 }}
+              onPress={() => navigation.navigate("Foods")}
+            >
+              <Text style={{ fontWeight: "bold" }}>Food</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={{ marginLeft: 15 }}
+              onPress={() => navigation.navigate("Fashion")}
+            >
+              <Text style={{ fontWeight: "bold" }}>Fashion</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={{ marginLeft: 15 }}
+              onPress={() => navigation.navigate("Electronics")}
+            >
+              <Text style={{ fontWeight: "bold" }}>Electronics</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={{ marginLeft: 15 }}>
+              <Text style={{ fontWeight: "bold" }}>Delivery</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={{ marginLeft: 15 }}>
+              <Text style={{ fontWeight: "bold" }}>Others</Text>
+            </TouchableOpacity>
+
+            
+            {/* Recommended Businesses */}
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            marginHorizontal: 5,
+            padding: 10,
+            marginTop: 25,
+          }}
+        >
+          <Text style={{ fontWeight: "bold", color: "grey" }}>Recommended</Text>
+          <Text style={{ color: "grey" }}>Show All</Text>
+        </View>
+
+        <FlatList
+          showsHorizontalScrollIndicator={false}
+          horizontal
+          data={businesses}
+          contentContainerStyle={{
+            paddingLeft: 15,
+            marginTop: 20,
+            paddingBottom: 30,
+          }}
+          renderItem={({ item }) => <RecommendedBusinessCard business={item} />}
+        />
+
+        {/* Promos */}
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            marginHorizontal: 5,
+            padding: 10,
+            marginTop: 30,
+          }}
+        >
+          <Text style={{ fontWeight: "bold", color: "grey" }}>Promos</Text>
+          <Text style={{ color: "grey" }}>Show All</Text>
+        </View>
+        {/* Promos */}
+
+        <FlatList
+          showsHorizontalScrollIndicator={false}
+          horizontal
+          data={businesses}
+          contentContainerStyle={{
+            paddingLeft: 20,
+            marginTop: 10,
+            paddingBottom: 30,
+          }}
+          renderItem={({ item }) => <PromosCard business={item} />}
+        />
+
+        
+        {/* New In Market */}
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            marginHorizontal: 5,
+            padding: 10,
+            marginTop: 20,
+          }}
+        >
+          <Text style={{ fontWeight: "bold", color: "grey" }}>
+            New In Market
+          </Text>
+          <Text style={{ color: "grey" }}>Show All</Text>
+        </View>
+        {/* New In Market */}
+
+ <FlatList
+          showsHorizontalScrollIndicator={false}
+          horizontal
+          data={businesses}
+          contentContainerStyle={{
+            paddingLeft: 0,
+            marginTop: 20,
+            paddingBottom: 60,
+          }}
+          renderItem={({ item }) => <NewInMarketCard business={item} />}
+        />
